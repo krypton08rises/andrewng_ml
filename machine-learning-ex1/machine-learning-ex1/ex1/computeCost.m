@@ -14,12 +14,13 @@ J = 0;
 %               You should set J to the cost.
 t= 0;
 for i=1:m
-h=0 ;
-for j=1:2
-	h = h+X(i,j)*theta(j);
+	h=0 ;
+	for j=1:2
+		h = h+X(i,j)*theta(j);
+	end
+	t=t+(h-y(i))^2;
 end
-t=t+(h-y(i))^2;
-end
+
 J = t/(2*m);
 
 

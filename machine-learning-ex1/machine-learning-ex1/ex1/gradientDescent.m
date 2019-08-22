@@ -20,13 +20,14 @@ for iter = 1:num_iters
 	s = 0;
 
 for i=1:m
-h=0 ;
-for j=1:2
-	h = h+X(i,j)*theta(j);
+	h=0 ;
+	for j=1:2
+		h = h+X(i,j)*theta(j);
+	end
+	s=s+(h-y(i))*X(i,2);
+	t=t+(h-y(i));
 end
-s=s+(h-y(i))*X(i,2);
-t=t+(h-y(i));
-end  
+  
  	k1= theta(1)-(alpha*t)/m;
 	k2 =theta(2)-(alpha*s)/m;
 
